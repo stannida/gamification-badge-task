@@ -149,6 +149,7 @@ You can use the following widgets to select a subset of data for exploration. Th
 
     #top X% of users who performed this action, the X is selected in the slider filter
     action_df_top_pct = action_df_cumm.head(int(len(action_df_cumm)*(user_pct_filter/100))).reset_index(drop=True)
+    st.write(f"List of users who performed at least 1 action of type {main_action_column} ranked by the number of actions, top {user_pct_filter}% selected:")
     st.dataframe(action_df_top_pct)
 
     #relationship between first and second action columns (e.g. events and event participants), colored by the number of users who created such events
